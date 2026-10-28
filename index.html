@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry 🥺</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ffe0eb,#f6b9d0,#e8c8ff);
+  font-family:Arial,sans-serif;
+}
+
+.card{
+  text-align:center;
+  padding:30px 20px;
+  width:90%;
+  max-width:400px;
+  border-radius:30px;
+  background:#ffffff65;
+  box-shadow:0 10px 40px #c66b9850;
+  animation:appear 1s ease;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:scale(.7)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.cat{
+  font-size:125px;
+  display:block;
+  animation:sad 2s infinite ease-in-out;
+  filter:drop-shadow(0 8px 8px #ad719544);
+}
+
+@keyframes sad{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-10px) rotate(3deg)}
+}
+
+h1{
+  font-size:65px;
+  color:#e75d91;
+  text-shadow:3px 4px 0 #ffffff;
+  margin:15px 0;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.06)}
+}
+
+.heart{
+  position:absolute;
+  bottom:-30px;
+  animation:float 6s linear infinite;
+  opacity:.8;
+  pointer-events:none;
+}
+
+@keyframes float{
+  to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+button{
+  border:0;
+  background:#ed78a5;
+  color:white;
+  padding:13px 28px;
+  font-size:17px;
+  border-radius:30px;
+  margin-top:15px;
+  box-shadow:0 5px 15px #d75c8a55;
+}
+
+#extra{
+  display:none;
+  margin-top:15px;
+  font-size:30px;
+  animation:appear .5s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<22;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["💗","💕","🥺","♡"][i%4];
+  h.style.left=Math.random()*100+"%";
+  h.style.animationDelay=Math.random()*6+"s";
+  h.style.animationDuration=(4+Math.random()*4)+"s";
+  h.style.fontSize=(18+Math.random()*18)+"px";
+  document.body.appendChild(h);
+}
+</script>
+
+<div class="card">
+  <span class="cat" id="cat">🥺🐱</span>
+  <h1>Sorry</h1>
+  <div style="font-size:32px">👉👈 💗</div>
+
+  <button onclick="showSorry()">🥺</button>
+
+  <div id="extra">
+    🥹💗🐱💗🥹
+    <br>
+    🫶🏻
+  </div>
+</div>
+
+<script>
+function showSorry(){
+  document.getElementById("extra").style.display="block";
+  document.getElementById("cat").textContent="😿🐱";
+}
+</script>
+
+</body>
+</html>
